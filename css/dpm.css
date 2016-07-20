@@ -1,0 +1,84 @@
+html,body
+{
+    height: 100%;
+    margin: auto;
+}
+body>div
+{
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/bg.jpg');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+body>div>p
+{
+
+}
+.div-1
+{
+    width: 70%;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.div-2
+{
+
+
+
+
+    height: 40px;
+}
+.div-2,.div-3
+{
+    width: 70%;
+    border-radius: 10px;
+    background: #FFFFFF;
+    margin: auto;
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    line-height: 35px;
+}
+textarea
+{
+
+}
+input,textarea
+{
+    border: 0px;
+    font-size: 17px;
+
+}
+textarea
+{
+    width: 95%;
+    height: 200px;
+}
+input
+{
+
+    height: 35px;
+
+}
+
+ul
+{
+    margin:0px;
+    padding:0px;
+    font-family:Arial;
+    list-style:none;
+    overflow:auto;
+}
+li
+{
+    margin:0px;
+    padding:0px;
+    font-family:Arial;
+    float:left;
+}

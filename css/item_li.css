@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{ background:#000;}
+
+#wrap{ background:url(../images/v6_zhongqiu/bg.jpg) center 0 no-repeat;}
+
+.reserved img{ max-width:96px;}
+
+.user-list li{ border:none; background:url(../images/item_bg.png) no-repeat; background-size: 100% 100%}
+
+.head{ width:110px; height:110px; border:none; border-radius:50%; overflow:hidden; margin:-5px 0 0 -9px;}
+.head img{ width:110px; height:110px; border-radius:110px;}
+
+.cont-box, .user-name, .cont-box a{ color:#061d3d;}
+
+.detail-box{   color:#061d3d;}
+.detail-top .userimg{ margin-left:0px;}
+.detail-box a{ color:#061d3d;}
+
+/*---二维码浮层---*/
+.fl-layer .fl-inner{ background:#fff;}
+.fl-inner{ background:none; box-shadow:none; border-radius:0;}
+.t2{
+    background: url("../images/t2.png") repeat-x;
+    height: 32px;
+    width: 100%;
+}
+.t4
+{
+    background: url("../images/t4.png") repeat-y;
+}
+.t6
+{
+    background: url("../images/t6.png") repeat-y;
+}
+.t8
+{
+    background: url("../images/t8.png") repeat-x;
+    height: 32px;
+}
+/*现场抽奖*/
+.fl-lottery .fl-inner{ background:none;}
+.props-color{ background:-webkit-linear-gradient(top , #002051 ,#012d45); background:-moz-linear-gradient(top , #002051 ,#012d45); background:-o-linear-gradient(top , #002051 ,#012d45); box-shadow: inset -1px 1px rgba(204,204,204,.2)}
+
+.und-btn a{ display:inline-block; width:79px; height:33px; line-height:33px; text-align:center; color:#fff; margin-left:5px;}
+/*{ border-color:#286592c #082e4f #06142c #286592; background:-moz-linear-gradient(top , #1d45a2, #0d2881); background:-webkit-linear-gradient(top , #1d45a2, #0d2881);background:-o-linear-gradient(top , #1d45a2, #0d2881);}*/
+
+.und-btn a,.btn-color,.btn-start{border:1px solid #4b9de1; border-color:#0a436c #082b4b #06142c #082b4b; box-shadow:inset 1px 1px 1px rgba(89,142,211,1); border-radius:4px; background:-moz-linear-gradient(top , #103383, #081d61); background:-webkit-linear-gradient(top , #103383, #081d61);background:-o-linear-gradient(top , #103383, #081d61);}
+.und-btn a:hover,.btn-color:hover,.btn-start:hover{ border-color:#286592c #082e4f #06142c #286592; background:-moz-linear-gradient(top , #1d45a2, #0d2881); background:-webkit-linear-gradient(top , #1d45a2, #0d2881);background:-o-linear-gradient(top , #1d45a2, #0d2881);}
+

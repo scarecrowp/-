@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{ background:#000;}
+
+#wrap{ background:url(../images/v6_newYear2016/bg.png) center bottom no-repeat; background-size:100% 100%;}
+
+.reserved img{ max-width:96px;}
+
+.user-list li{ border:none; background:url(../images/v6_newYear2016/li-bg.png) no-repeat;}
+
+.head{ width:90px; height:90px; border:2px solid #fff; border-radius:50%; overflow:hidden; margin:2px 0 0 -9px;}
+.head img{ width:90px; height:90px; border-radius:90px;}
+.elem{ display:none;}
+.cont-box, .user-name, .cont-box a{ color:#2a9792;}
+.cont-box a{ color:#2a9792;}
+.num-t{ color:#f1ffd7;}
+
+.detail-box{ background:url(../images/v6_newYear2016/detail-bg.png) no-repeat; background-size:100% 100%; color:#2a9792;}
+.detail-bar{ background:none;}
+.detail-box .head{ margin-left:9px;}
+.detail-top{ border-bottom:1px solid #fff;}
+.detail-top .userimg{ margin-left:0px;}
+.detail-box .elem{ left:-12px;}
+.detail-box a, .rock-name, .choose-num{ color:#2a9792;}
+
+/*---二维码浮层---*/
+.fl-layer .fl-inner{ background:#fff;}
+.fl-inner{ background:none; box-shadow:none; border-radius:0;}
+
+/*现场抽奖*/
+.fl-lottery .fl-inner{ background:none;}
+.props-color{ background:-webkit-linear-gradient(top , #2a9792 ,#1c6b67); background:-moz-linear-gradient(top , #2a9792 ,#1c6b67); background:-o-linear-gradient(top , #2a9792 ,#1c6b67); box-shadow: inset -1px 1px rgba(204,204,204,.2)}
+
+.und-btn a{ display:inline-block; width:79px; height:33px; line-height:33px; text-align:center; color:#fff; margin-left:5px;}
+/*{ border-color:#286592c #082e4f #06142c #286592; background:-moz-linear-gradient(top , #1d45a2, #0d2881); background:-webkit-linear-gradient(top , #1d45a2, #0d2881);background:-o-linear-gradient(top , #1d45a2, #0d2881);}*/
+
+.und-btn a,.btn-color,.btn-start{border:1px solid #4b9de1; border-color:#2a9792; box-shadow:inset 1px 1px 1px rgba(89,142,211,1); border-radius:4px; background:-moz-linear-gradient(top , #2a9792, #1c6b67); background:-webkit-linear-gradient(top , #2a9792, #1c6b67);background:-o-linear-gradient(top , #2a9792, #1c6b67);}
+.und-btn a:hover,.btn-color:hover,.btn-start:hover{ border-color:#2a9792; background:-moz-linear-gradient(top , #1c6b67, #2a9792); background:-webkit-linear-gradient(top , #1c6b67, #2a9792);background:-o-linear-gradient(top , #1c6b67, #2a9792);}
+
