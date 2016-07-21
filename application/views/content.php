@@ -155,13 +155,13 @@
                          //   htmlstr+='<div onclick="rclick(\''+jsonData[i].create_time+'\',\''+jsonData[i].for_name+'\',\''+jsonData[i].content+'\')"><div class="userimg left"><i class="elem"></i><span class="elem2"></span><a href="javascript:void(0);"class="head">@'+jsonData[i].for_name+':</a></div>';
 
                             var fontsize = "24";
-                            if(jsonData[i].content.length+jsonData[i].for_name.length<15){
-                                fontsize="60";
-                            }
-                            else if(jsonData[i].content.length<28){
-                                fontsize="34";
-                            }
-                            htmlstr+='<table onclick="rclick(\''+jsonData[i].create_time+'\',\''+jsonData[i].for_name+'\',\''+jsonData[i].content+'\')"><tr><td style="font-size:'+fontsize+'px; padding-right: 10px"> <span>@'+jsonData[i].for_name+'</span>:'+
+//                            if(jsonData[i].content.length+jsonData[i].for_name.length<15){
+//                                fontsize="60";
+//                            }
+//                            else if(jsonData[i].content.length<28){
+//                                fontsize="34";
+//                            }
+                            htmlstr+='<table onclick="rclick(\''+jsonData[i].create_time+'\',\''+jsonData[i].for_name+'\',\''+jsonData[i].content+'\')"><tr><td style="font-size:'+fontsize+'px; padding-right: 10px"> <span>@'+jsonData[i].for_name+'</span><br/>'+
                                 jsonData[i].content+'</td></tr></table>';
                          //   htmlstr+='<div class="cont-box left"><p class="c-word"><a href="javascript:void(0);"class="user-name msgUserName"> </a><span class="cont displayContent"style="font-size:'+fontsize+'px;">'+
                             //    jsonData[i].content+'</span></p></div><div class="btn-detail messageDetailBtn"style="display: none;"><div class="btn-style"><a href="javascript:void(0);"class="icon-arrow"></a></div></div></div>';
@@ -193,23 +193,28 @@
 
         function rclick(a,b,c){
             pause();
-            var font ='';
-            if(c.length<12){
-                font='60';
-                //document.getElementById('de_msg').innerHTML='<div class="detail-bar"style="cursor: default;"data-id="11520444"><div class="detail-top clearfix"><div class="userimg left"><i class="elem"></i><span class="elem2"></span><a href="javascript:;"class="head messageOneAvatar"></a></div><p class="detail-info"><a href="javascript:;"class="user-name-detail messageOneName">'+b+':</a><span class="messageDetailIntroLabel"></span></p></div><p class="detail-cont messageDetailContent"style="font-size:60px;">'+c+'</p><div class="imgb-show"></div></div>';
-            }
-            else if(c.length<28){
-               font='34';
-                // document.getElementById('de_msg').innerHTML='<div class="detail-bar"style="cursor: default;"data-id="11520444"><div class="detail-top clearfix"><div class="userimg left"><i class="elem"></i><span class="elem2"></span><a href="javascript:;"class="head messageOneAvatar"></a></div><p class="detail-info"><a href="javascript:;"class="user-name-detail messageOneName">'+b+':</a><span class="messageDetailIntroLabel"></span></p></div><p class="detail-cont messageDetailContent"style="font-size:34px;">'+c+'</p><div class="imgb-show"></div></div>';
-            }
-            else{
-                font='24';
-            }
+            var font ='24';
+//            if(c.length<12){
+//                font='60';
+//                //document.getElementById('de_msg').innerHTML='<div class="detail-bar"style="cursor: default;"data-id="11520444"><div class="detail-top clearfix"><div class="userimg left"><i class="elem"></i><span class="elem2"></span><a href="javascript:;"class="head messageOneAvatar"></a></div><p class="detail-info"><a href="javascript:;"class="user-name-detail messageOneName">'+b+':</a><span class="messageDetailIntroLabel"></span></p></div><p class="detail-cont messageDetailContent"style="font-size:60px;">'+c+'</p><div class="imgb-show"></div></div>';
+//            }
+//            else if(c.length<28){
+//               font='34';
+//                // document.getElementById('de_msg').innerHTML='<div class="detail-bar"style="cursor: default;"data-id="11520444"><div class="detail-top clearfix"><div class="userimg left"><i class="elem"></i><span class="elem2"></span><a href="javascript:;"class="head messageOneAvatar"></a></div><p class="detail-info"><a href="javascript:;"class="user-name-detail messageOneName">'+b+':</a><span class="messageDetailIntroLabel"></span></p></div><p class="detail-cont messageDetailContent"style="font-size:34px;">'+c+'</p><div class="imgb-show"></div></div>';
+//            }
+//            else if(c.length<120){
+//                font='24';
+//            }
+//            else
+//            {
+//                font = '18';
+//            }
+
             var html='<table style="width: 100%; height: 500px"  border="0" cellspacing="0" cellpadding="0"><tr><td style="height: 32px;vertical-align: bottom;display:block;font-size:0  " valign="bottom"><img src="../images/t1.png" style="height: 32px"></td>';
             html+='<td class="t2"></td>';
             html+='<td style="display:block;font-size:0 "><img src="../images/t3.png"></td>';
             html+='<tr><td class="t4"></td>';
-            html+='<td style="font-size:34px;background: #17cfee">@'+b+'<br>'+c+'</td>';
+            html+='<td style="font-size:34px;background: #17cfee"> <span>@'+b+'</span><br/>'+c+'</td>';
 
             html+='<td class="t6"></td></tr>';
 

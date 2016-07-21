@@ -39,6 +39,7 @@ body{ background:#000;}
     background: url("../images/t8.png") repeat-x;
     height: 32px;
 }
+
 /*现场抽奖*/
 .fl-lottery .fl-inner{ background:none;}
 .props-color{ background:-webkit-linear-gradient(top , #002051 ,#012d45); background:-moz-linear-gradient(top , #002051 ,#012d45); background:-o-linear-gradient(top , #002051 ,#012d45); box-shadow: inset -1px 1px rgba(204,204,204,.2)}

@@ -555,7 +555,19 @@ div.checker input {
 div.radio {
   position: relative;
 }
-
+.create_time
+{
+  cursor: pointer;
+  width: 120px;
+}
+.status
+{
+  width: 120px;;
+}
+.action
+{
+  width: 120px;
+}
 div.radio span {
   display: -moz-inline-box;
   display: inline-block;
@@ -606,4 +618,9 @@ div.uploader input {
   height: 25px;
   border: none;
   cursor: default;
+}
+.nofify:link,.nofify:visited,notify:hover
+{
+  color: white;
+
 }

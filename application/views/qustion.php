@@ -21,6 +21,8 @@
     <script src="<?php echo base_url(); ?>js/unicorn.tables.js"></script>
     <script src="<?php echo base_url(); ?>js/jquery.form.js"></script>
     <script src="<?php echo base_url(); ?>js/tooltips.js"></script>
+    <script src="<?php echo base_url(); ?>js/layer/layer.js"></script>
+
 </head>
 <body>
 
@@ -50,12 +52,12 @@
                             <tr>
                                 <th>#</th>
 
-                                <th>姓名</th>
+                                <th style="width: 160px">姓名</th>
 
                                 <th>内容</th>
-                                <th class="create_time">时间</th>
-                                <th width="20%">状态</th>
-                                <th>操作</th>
+                                <th class="create_time"><a href="<?php echo base_url('Welcome/order');?>">时间</a> </th>
+                                <th  class="status" ><a href="<?php echo base_url('Welcome/status');?>">状态</a></th>
+                                <th class="action">操作</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -105,13 +107,9 @@
     </div>
 </div>
 <script type="text/javascript">
+    var getmaxidtimer;
     $(function(){
-        $('.create_time').click(function(){
-            $.get('<?php echo base_url(); ?>Welcome/admin?o=d', function(data) {
 
-            });
-            }
-        });
         $('.y').click(function(){
 
             $(this).parents('form').ajaxSubmit(function(data){
@@ -153,7 +151,91 @@
                 });
             });
         });
+        var maxid=<?php echo $maxid ?> ;
+        getmaxidtimer=setInterval("abc(<?php echo $maxid ?>)",3000);
     });
+
+    function abc(maxid)
+    {
+      //  console.log("a");
+        $.ajax({
+            async: false,
+            url: '<?php echo base_url('Welcome/checkIsHasNew/');?>/'+maxid,
+            dataType: "json",
+            type: "get",
+
+            timeout: 10000,
+            complete: function(data){
+               var Maxid=data.responseText;
+                if (Maxid=="")
+                {
+                    Maxid=0;
+                }
+                if (Maxid==1)
+                {
+                    if ($("body").find("div.layui-layer-title").text() === "新消息提醒")
+                    return;
+                    layer.open({
+                        type: 1, //page层
+                        area: ['200px', '100px'],
+                        title: '新消息提醒',
+                        shade: 0, //遮罩透明度
+                        moveType: 1, //拖拽风格，0是默认，1是传统拖动
+                        shift: 2, //0-6的动画形式，-1不开启
+                        offset: 'rb',//右下角弹出
+                        content: '<div style=" text-align: center;background: red; color: white"><a href="admin" class="nofify">有新的问题提交<br/> 重新载入</a></div></div>'
+                    });
+                    setTimeout('flash_title()',2000); //2秒之后调用一次
+                    clearInterval(getmaxidtimer);
+                }
+
+            }
+
+        });
+    }
+    function flash_title()
+    {
+        //当窗口效果为最小化，或者没焦点状态下才闪动
+        if(isMinStatus() || !window.focus)
+        {
+            newMsgCount();
+        }
+        else
+        {
+            document.title='美敦力微信大屏幕';//窗口没有消息的时候默认的title内容
+            window.clearInterval();
+        }
+    }
+    //消息提示
+    var flag=false;
+    function newMsgCount(){
+        if(flag){
+            flag=false;
+            document.title='【新提问】';
+        }else{
+            flag=true;
+            document.title='【　　　】';
+        }
+        window.setTimeout('flash_title(0)',380);
+    }
+    //判断窗口是否最小化
+    //在Opera中还不能显示
+    var isMin = false;
+    function isMinStatus() {
+        //除了Internet Explorer浏览器，其他主流浏览器均支持Window outerHeight 和outerWidth 属性
+        if(window.outerWidth != undefined && window.outerHeight != undefined){
+            isMin = window.outerWidth <= 160 && window.outerHeight <= 27;
+        }else{
+            isMin = window.outerWidth <= 160 && window.outerHeight <= 27;
+        }
+        //除了Internet Explorer浏览器，其他主流浏览器均支持Window screenY 和screenX 属性
+        if(window.screenY != undefined && window.screenX != undefined ){
+            isMin = window.screenY < -30000 && window.screenX < -30000;//FF Chrome
+        }else{
+            isMin = window.screenTop < -30000 && window.screenLeft < -30000;//IE
+        }
+        return isMin;
+    }
 </script>
 </body>
 </html>

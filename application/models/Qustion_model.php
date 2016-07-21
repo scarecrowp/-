@@ -12,11 +12,11 @@ class Qustion_model extends CI_Model {
     {
         parent::__construct();
     }
-    public function maxID($table)
+    public function maxID($table='questions')
     {
   //      $res = $this->db->get('questions');
         //select max(id) from testnotnull;
-        $res=  $this->db->query("select max(id) as mid from questions_select ");
+        $res=  $this->db->query("select max(id) as mid from ".$table);
         //var_dump($res->result()[0]->mid);
         //$res = $this->db->get_where('questions', array('owner =' => '$owner'))->result();
 
@@ -47,5 +47,16 @@ class Qustion_model extends CI_Model {
             return false;
         }
     }
+    public function isHasNewRecord($table,$oid)
+    {
 
+        $this->db->where('id>', $oid);
+
+        $e = $this->db->get($table);
+        if ($e->num_rows() > 0)
+        {
+            return true;
+        }
+        return false;
+    }
 }
